@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101410">
+  <meta name="description" content="Explore a practical digital marketing course covering strategy, SEO, Google Ads, social media, websites, automation, and funnels.">
+  <title>Digital Marketing — Learn. Build. Grow.</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f3f2e9;
+      --muted: #a4aaa0;
+      --bg: #101410;
+      --panel: #191e19;
+      --line: #2a3229;
+      --lime: #c3f56a;
+      --lime-dark: #19220e;
+      --orange: #ff9a67;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid var(--lime);
+      outline-offset: 4px;
+    }
+    .shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: .95rem;
+      font-weight: 750;
+      letter-spacing: -.03em;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--lime);
+      color: #14190e;
+      font-size: 15px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .86rem;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links .nav-cta { color: var(--lime); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 495px;
+      align-items: center;
+      overflow: hidden;
+      padding-block: 74px 80px;
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      top: 10px;
+      right: -80px;
+      width: 470px;
+      height: 470px;
+      border: 1px solid #293126;
+      border-radius: 50%;
+      box-shadow: 0 0 0 48px var(--bg), 0 0 0 49px #20281e, 0 0 0 98px var(--bg), 0 0 0 99px #1a2119;
+      content: "";
+      opacity: .8;
+    }
+    .hero-copy { max-width: 700px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 22px;
+      color: var(--lime);
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 20px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      font-weight: 650;
+      letter-spacing: -.075em;
+      line-height: .98;
+    }
+    h1 em { color: var(--lime); font-family: var(--serif); font-weight: 400; }
+    .hero-description {
+      max-width: 515px;
+      margin: 25px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 32px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid var(--lime);
+      border-radius: 6px;
+      background: var(--lime);
+      color: #151a11;
+      font-size: .88rem;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #d3ff8a; }
+    .text-link {
+      color: var(--ink);
+      font-size: .88rem;
+      text-decoration: none;
+    }
+    .text-link span { margin-left: 5px; color: var(--lime); }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 54px;
+      padding-top: 21px;
+      border-top: 1px solid var(--line);
+    }
+    .meta-item { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: .79rem; }
+    .meta-item strong { color: var(--ink); font-size: .9rem; }
+    .meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--lime); }
+
+    .curriculum { padding-block: 70px 90px; border-top: 1px solid var(--line); background: #131813; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 580;
+      letter-spacing: -.06em;
+      line-height: 1.1;
+    }
+    .section-heading p { max-width: 390px; margin: 0; color: var(--muted); font-size: .9rem; }
+    .curriculum-tools { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+    .curriculum-count { color: var(--muted); font-size: .8rem; }
+    .search-wrap { position: relative; width: min(100%, 290px); }
+    .search-wrap svg { position: absolute; top: 50%; left: 13px; width: 16px; transform: translateY(-50%); color: var(--muted); }
+    .search-wrap input {
+      width: 100%;
+      min-height: 42px;
+      padding: 0 13px 0 39px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--bg);
+      color: var(--ink);
+      font: inherit;
+      font-size: .82rem;
+    }
+    .search-wrap input::placeholder { color: #818a7e; }
+    .track-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .track-card {
+      display: flex;
+      min-height: 210px;
+      flex-direction: column;
+      padding: 23px 24px 20px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      text-decoration: none;
+      transition: border-color .2s ease, transform .2s ease, background .2s ease;
+    }
+    .track-card[hidden] { display: none; }
+    .track-card:hover { transform: translateY(-3px); border-color: #68794e; background: #1c231b; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; }
+    .track-number { color: var(--lime); font-size: .72rem; font-weight: 750; letter-spacing: .13em; }
+    .card-arrow { color: #7e897a; font-size: 1.2rem; transition: color .2s ease, transform .2s ease; }
+    .track-card:hover .card-arrow { transform: translate(2px, -2px); color: var(--lime); }
+    .track-card h3 { margin: 15px 0 7px; font-size: 1.12rem; font-weight: 620; letter-spacing: -.025em; line-height: 1.3; }
+    .track-card p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.55; }
+    .card-tag {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 5px 8px;
+      border: 1px solid #333d30;
+      border-radius: 4px;
+      color: #b7c0b0;
+      font-size: .68rem;
+    }
+    .empty-state { display: none; grid-column: 1 / -1; padding: 30px; color: var(--muted); text-align: center; }
+
+    .closing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 35px; border-top: 1px solid var(--line); }
+    .closing p { margin: 0; color: var(--muted); font-size: .83rem; }
+    .closing a { color: var(--lime); font-size: .83rem; text-decoration: none; }
+    .course-shell { display: grid; grid-template-columns: minmax(245px, 290px) minmax(0, 1fr); gap: 16px; }
+    .topic-sidebar, .lesson-stage { min-width: 0; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); }
+    .topic-sidebar { align-self: start; max-height: 820px; overflow: hidden; }
+    .sidebar-heading { padding: 18px 17px 13px; border-bottom: 1px solid var(--line); }
+    .sidebar-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .sidebar-heading h3 { margin: 0; font-size: .95rem; font-weight: 650; }
+    .sidebar-count { color: var(--muted); font-size: .7rem; }
+    .sidebar-search { width: 100%; min-height: 38px; margin-top: 13px; padding: 0 11px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--ink); font: inherit; font-size: .78rem; }
+    .sidebar-search::placeholder { color: #818a7e; }
+    .topic-tree { max-height: 690px; overflow: auto; padding: 8px 8px 15px; scrollbar-color: #46513e transparent; scrollbar-width: thin; }
+    .topic-tree details { min-width: 0; }
+    .topic-tree summary { display: flex; align-items: center; gap: 7px; min-height: 35px; padding: 5px 8px; border-radius: 4px; color: #d7ddcf; cursor: pointer; font-size: .78rem; line-height: 1.4; list-style: none; }
+    .topic-tree summary::-webkit-details-marker { display: none; }
+    .topic-tree summary::before { width: 13px; flex: 0 0 13px; color: #899482; content: "›"; font-size: 1rem; text-align: center; transition: transform .15s ease; }
+    .topic-tree details[open] > summary::before { transform: rotate(90deg); }
+    .topic-tree summary:hover, .topic-tree summary:focus-visible { background: #222a20; color: var(--lime); }
+    .track-entry > summary { color: var(--ink); font-weight: 620; }
+    .topic-children { margin-left: 9px; padding-left: 7px; border-left: 1px solid #30392d; }
+    .topic-lesson {
+      display: block;
+      width: 100%;
+      min-height: 32px;
+      padding: 6px 8px 6px 15px;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: .74rem;
+      line-height: 1.4;
+      text-align: left;
+    }
+    .topic-lesson:hover { background: #222a20; color: var(--ink); }
+    .topic-lesson[aria-current="page"] { background: var(--lime-dark); color: var(--lime); }
+    .topic-lesson[hidden], .topic-tree details[hidden] { display: none; }
+    .lesson-stage { overflow: hidden; }
+    .viewer-toolbar { display: flex; min-height: 63px; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 16px; border-bottom: 1px solid var(--line); }
+    .viewer-title { min-width: 0; }
+    .viewer-title strong { display: block; overflow: hidden; color: var(--ink); font-size: .85rem; font-weight: 620; text-overflow: ellipsis; white-space: nowrap; }
+    .viewer-title span { display: block; margin-top: 2px; color: var(--muted); font-size: .7rem; }
+    .viewer-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+    .viewer-button { min-height: 33px; padding: 0 10px; border: 1px solid var(--line); border-radius: 4px; background: #20261f; color: var(--ink); cursor: pointer; font: inherit; font-size: .73rem; text-decoration: none; }
+    .viewer-button:hover:not(:disabled) { border-color: #6b804e; color: var(--lime); }
+    .viewer-button:disabled { cursor: not-allowed; opacity: .4; }
+    .lesson-content { min-height: 600px; }
+    .welcome-panel { padding: clamp(22px, 4vw, 42px); }
+    .welcome-panel h3 { margin: 0; font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 580; letter-spacing: -.055em; line-height: 1.1; }
+    .welcome-panel h3 em { color: var(--lime); font-family: var(--serif); font-weight: 400; }
+    .welcome-panel > p:not(.eyebrow) { max-width: 550px; margin: 13px 0 28px; color: var(--muted); font-size: .88rem; }
+    .course-timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+    .timeline-step { position: relative; display: flex; min-height: 83px; align-items: flex-start; gap: 12px; padding: 13px; border: 1px solid var(--line); border-radius: 5px; background: #151a15; color: var(--ink); cursor: pointer; font: inherit; text-align: left; transition: border-color .2s ease, background .2s ease; }
+    .timeline-step:hover, .timeline-step[aria-current="step"] { border-color: #718950; background: #1d251a; }
+    .timeline-step[aria-current="step"] .timeline-marker { background: var(--lime); color: #151a11; }
+    .timeline-marker { display: grid; width: 25px; height: 25px; flex: 0 0 25px; place-items: center; border: 1px solid #48533e; border-radius: 50%; color: var(--lime); font-size: .66rem; font-weight: 750; }
+    .timeline-copy { min-width: 0; }
+    .timeline-copy strong { display: block; font-size: .76rem; font-weight: 620; line-height: 1.35; }
+    .timeline-copy span { display: block; margin-top: 4px; color: var(--muted); font-size: .68rem; }
+    .timeline-empty, .catalog-error { grid-column: 1 / -1; color: var(--muted); font-size: .84rem; }
+    .frame-wrap { height: min(78vh, 880px); min-height: 620px; background: #fff; }
+    .frame-wrap[hidden] { display: none; }
+    .frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+    .loading-state { padding: 24px; color: var(--muted); font-size: .82rem; }
+    @media (max-width: 860px) {
+      .course-shell { grid-template-columns: minmax(210px, 250px) minmax(0, 1fr); gap: 10px; }
+      .viewer-toolbar { align-items: flex-start; flex-direction: column; }
+      .viewer-actions { flex-wrap: wrap; }
+      .course-timeline { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 32px, 540px); }
+      .topbar { min-height: 66px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: .78rem; }
+      .hero { min-height: auto; padding-block: 72px 58px; }
+      .hero::after { top: 35px; right: -305px; }
+      .hero-meta { gap: 13px 22px; margin-top: 43px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .track-grid { grid-template-columns: 1fr; }
+      .track-card { min-height: 190px; }
+      .course-shell { grid-template-columns: 1fr; }
+      .topic-sidebar { max-height: 390px; }
+      .topic-tree { max-height: 300px; }
+      .lesson-content { min-height: 440px; }
+      .frame-wrap { height: 68vh; min-height: 440px; }
+    }
+    @media (max-width: 420px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .73rem; }
+      .brand { font-size: .82rem; }
+      .hero-actions { align-items: flex-start; flex-direction: column; gap: 16px; }
+      .curriculum-tools { align-items: stretch; flex-direction: column; }
+      .search-wrap { width: 100%; }
+      .closing { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#" aria-label="Digital Marketing course home">
+      <span class="brand-mark" aria-hidden="true">↗</span>
+      <span>Digital Marketing</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#curriculum">Curriculum</a>
+      <a class="nav-cta" href="#curriculum">Start learning <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Practical course · Learn at your pace</p>
+        <h1 id="hero-title">Make digital<br>marketing <em>work.</em></h1>
+        <p class="hero-description">Build your skills from the ground up — from finding your audience to launching campaigns, growing traffic, and measuring what matters.</p>
+        <div class="hero-actions">
+          <a class="button" href="#curriculum">Start with the fundamentals <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#curriculum">Explore all 8 learning paths <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-meta" aria-label="Course highlights">
+          <div class="meta-item"><span class="meta-dot" aria-hidden="true"></span><strong>8</strong> learning paths</div>
+          <div class="meta-item"><span class="meta-dot" aria-hidden="true"></span>Strategy to execution</div>
+          <div class="meta-item"><span class="meta-dot" aria-hidden="true"></span>Real-world tools &amp; projects</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="curriculum" id="curriculum" aria-labelledby="curriculum-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The learning journey</p>
+            <h2 id="curriculum-title">Your course workspace</h2>
+          </div>
+          <p>Browse tracks and nested topics in the sidebar, or follow the timeline. Lessons open here without leaving the course.</p>
+        </div>
+        <div class="course-shell">
+          <aside class="topic-sidebar" aria-label="Course topics">
+            <div class="sidebar-heading">
+              <div class="sidebar-heading-row">
+                <h3>Course topics</h3>
+                <span class="sidebar-count" id="sidebar-count">Loading…</span>
+              </div>
+              <input class="sidebar-search" id="topic-search" type="search" placeholder="Search lessons..." aria-label="Search course topics">
+            </div>
+            <nav class="topic-tree" id="topic-tree" aria-label="Nested course topics">
+              <p class="loading-state">Loading course topics…</p>
+              <p class="catalog-error" id="topic-empty" hidden>No topics match your search.</p>
+            </nav>
+          </aside>
+          <section class="lesson-stage" aria-label="Lesson viewer">
+            <header class="viewer-toolbar">
+              <div class="viewer-title" aria-live="polite">
+                <strong id="viewer-lesson-title">Choose a lesson to begin</strong>
+                <span id="viewer-lesson-path">Your lessons will open in this course window.</span>
+              </div>
+              <div class="viewer-actions">
+                <button class="viewer-button" id="previous-lesson" type="button" disabled>← Previous</button>
+                <button class="viewer-button" id="next-lesson" type="button" disabled>Next →</button>
+                <a class="viewer-button" id="open-lesson" href="#" target="_blank" rel="noopener" hidden>Open separately ↗</a>
+              </div>
+            </header>
+            <div class="lesson-content">
+              <div class="welcome-panel" id="welcome-panel">
+                <p class="eyebrow">Course timeline</p>
+                <h3>Learn it <em>step by step.</em></h3>
+                <p>Follow the learning path from core marketing strategy through campaigns, automation, and complete funnel setup. Pick a step to open its first lesson, or expand any topic in the sidebar.</p>
+                <div class="course-timeline" id="course-timeline" aria-label="Course timeline">
+                  <p class="loading-state">Preparing your course timeline…</p>
+                </div>
+              </div>
+              <div class="frame-wrap" id="frame-wrap" hidden>
+                <iframe id="lesson-frame" title="Course lesson" loading="lazy"></iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell closing">
+    <p>Learn a skill. Put it into practice. Keep growing.</p>
+    <a href="#curriculum">Back to curriculum ↑</a>
+  </footer>
+  <script>
+    const topicTree = document.querySelector("#topic-tree");
+    const topicSearch = document.querySelector("#topic-search");
+    const sidebarCount = document.querySelector("#sidebar-count");
+    const topicEmpty = document.querySelector("#topic-empty");
+    const timeline = document.querySelector("#course-timeline");
+    const lessonFrame = document.querySelector("#lesson-frame");
+    const frameWrap = document.querySelector("#frame-wrap");
+    const welcomePanel = document.querySelector("#welcome-panel");
+    const lessonTitle = document.querySelector("#viewer-lesson-title");
+    const lessonPath = document.querySelector("#viewer-lesson-path");
+    const previousButton = document.querySelector("#previous-lesson");
+    const nextButton = document.querySelector("#next-lesson");
+    const openLesson = document.querySelector("#open-lesson");
+    const lessonButtons = [];
+    let lessons = [];
+    let selectedIndex = -1;
+
+    function displayTitle(title) {
+      return title.replace(/^\d+[\s._-]*/, "").replaceAll("_", " ").trim();
+    }
+
+    function countLessons(node) {
+      if (node.kind === "lesson") return 1;
+      return node.children.reduce((total, child) => total + countLessons(child), 0);
+    }
+
+    function firstLesson(node) {
+      if (node.kind === "lesson") return node;
+      for (const child of node.children) {
+        const found = firstLesson(child);
+        if (found) return found;
+      }
+      return null;
+    }
+
+    function encodedPath(path) {
+      return path.split("/").map(encodeURIComponent).join("/");
+    }
+
+    function renderNode(node, depth = 0) {
+      if (node.kind === "lesson") {
+        const button = document.createElement("button");
+        button.className = "topic-lesson";
+        button.type = "button";
+        button.textContent = displayTitle(node.title);
+        button.dataset.search = `${node.title} ${node.path}`.toLowerCase();
+        button.dataset.path = node.path;
+        button.addEventListener("click", () => openLessonAt(node.path));
+        lessonButtons.push(button);
+        lessons.push(node);
+        return button;
+      }
+
+      const details = document.createElement("details");
+      details.dataset.search = `${node.title} ${node.path}`.toLowerCase();
+      if (depth === 0 && lessons.length === 0) details.open = true;
+      if (depth === 1) details.open = false;
+      if (depth === 0) details.className = "track-entry";
+
+      const summary = document.createElement("summary");
+      summary.textContent = displayTitle(node.title);
+      details.append(summary);
+
+      const children = document.createElement("div");
+      children.className = "topic-children";
+      for (const child of node.children) children.append(renderNode(child, depth + 1));
+      details.append(children);
+      return details;
+    }
+
+    function renderTimeline(tracks) {
+      timeline.replaceChildren();
+      tracks.forEach((track, index) => {
+        const first = firstLesson(track);
+        const step = document.createElement("button");
+        step.className = "timeline-step";
+        step.type = "button";
+        step.dataset.track = track.path;
+        step.disabled = !first;
+
+        const marker = document.createElement("span");
+        marker.className = "timeline-marker";
+        marker.textContent = String(index + 1).padStart(2, "0");
+
+        const copy = document.createElement("span");
+        copy.className = "timeline-copy";
+        const title = document.createElement("strong");
+        title.textContent = displayTitle(track.title);
+        const count = document.createElement("span");
+        const total = countLessons(track);
+        count.textContent = `${total} ${total === 1 ? "lesson" : "lessons"}`;
+        copy.append(title, count);
+        step.append(marker, copy);
+        step.addEventListener("click", () => {
+          if (first) openLessonAt(first.path);
+        });
+        timeline.append(step);
+      });
+    }
+
+    function setCurrentLesson(path, updateHistory = true) {
+      selectedIndex = lessons.findIndex((lesson) => lesson.path === path);
+      if (selectedIndex < 0) return;
+      if (topicSearch.value) {
+        topicSearch.value = "";
+        filterTopics();
+      }
+
+      const lesson = lessons[selectedIndex];
+      const url = encodedPath(lesson.path);
+      lessonFrame.src = url;
+      lessonFrame.title = displayTitle(lesson.title);
+      frameWrap.hidden = false;
+      welcomePanel.hidden = true;
+      lessonTitle.textContent = displayTitle(lesson.title);
+      lessonPath.textContent = lesson.path.split("/").slice(0, -1).map(displayTitle).join(" / ");
+      openLesson.href = url;
+      openLesson.hidden = false;
+      previousButton.disabled = selectedIndex === 0;
+      nextButton.disabled = selectedIndex === lessons.length - 1;
+
+      for (const button of lessonButtons) {
+        if (button.dataset.path === lesson.path) {
+          button.setAttribute("aria-current", "page");
+          let parent = button.parentElement;
+          while (parent && parent !== topicTree) {
+            if (parent.tagName === "DETAILS") parent.open = true;
+            parent = parent.parentElement;
+          }
+        } else {
+          button.removeAttribute("aria-current");
+        }
+      }
+
+      const trackPath = lesson.path.split("/")[0];
+      for (const step of timeline.querySelectorAll(".timeline-step")) {
+        if (step.dataset.track === trackPath) step.setAttribute("aria-current", "step");
+        else step.removeAttribute("aria-current");
+      }
+
+      if (updateHistory) {
+        const params = new URLSearchParams(location.search);
+        params.set("lesson", lesson.path);
+        history.pushState({ lesson: lesson.path }, "", `${location.pathname}?${params.toString()}#curriculum`);
+      }
+    }
+
+    function openLessonAt(path) {
+      setCurrentLesson(path);
+    }
+
+    function filterTopics() {
+      const query = topicSearch.value.trim().toLowerCase();
+      for (const button of lessonButtons) {
+        let matches = !query || button.dataset.search.includes(query);
+        let parent = button.parentElement;
+        while (!matches && parent && parent !== topicTree) {
+          if (parent.tagName === "DETAILS" && parent.dataset.search.includes(query)) matches = true;
+          parent = parent.parentElement;
+        }
+        button.hidden = !matches;
+      }
+
+      for (const group of [...topicTree.querySelectorAll("details")].reverse()) {
+        const hasVisibleLesson = group.querySelector(".topic-lesson:not([hidden])");
+        const ownMatch = query && group.dataset.search.includes(query);
+        group.hidden = Boolean(query) && !hasVisibleLesson && !ownMatch;
+        if (query && !group.hidden) group.open = true;
+        if (!query && group.classList.contains("track-entry")) group.open = false;
+      }
+      topicEmpty.hidden = !query || lessonButtons.some((button) => !button.hidden);
+    }
+
+    previousButton.addEventListener("click", () => {
+      if (selectedIndex > 0) openLessonAt(lessons[selectedIndex - 1].path);
+    });
+    nextButton.addEventListener("click", () => {
+      if (selectedIndex < lessons.length - 1) openLessonAt(lessons[selectedIndex + 1].path);
+    });
+    topicSearch.addEventListener("input", filterTopics);
+    window.addEventListener("popstate", () => {
+      const path = new URLSearchParams(location.search).get("lesson");
+      if (path) setCurrentLesson(path, false);
+      else {
+        selectedIndex = -1;
+        frameWrap.hidden = true;
+        welcomePanel.hidden = false;
+        lessonTitle.textContent = "Choose a lesson to begin";
+        lessonPath.textContent = "Your lessons will open in this course window.";
+        openLesson.hidden = true;
+        previousButton.disabled = true;
+        nextButton.disabled = true;
+      }
+    });
+
+    fetch("./course-catalog.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`Catalog request failed (${response.status})`);
+        return response.json();
+      })
+      .then((tracks) => {
+        topicTree.querySelector(".loading-state")?.remove();
+        for (const track of tracks) topicTree.append(renderNode(track));
+        renderTimeline(tracks);
+        sidebarCount.textContent = `${lessons.length} lessons`;
+
+        const requestedLesson = new URLSearchParams(location.search).get("lesson");
+        const initialLesson = lessons.some((lesson) => lesson.path === requestedLesson)
+          ? requestedLesson
+          : null;
+        if (initialLesson) setCurrentLesson(initialLesson, false);
+      })
+      .catch((error) => {
+        console.error("Could not load the course catalog.", error);
+        topicTree.innerHTML = '<p class="catalog-error">Course topics could not be loaded. Please reload the page.</p>';
+        timeline.innerHTML = '<p class="catalog-error">The course timeline is unavailable.</p>';
+        sidebarCount.textContent = "Unavailable";
+      });
+  </script>
+</body>
+</html>
